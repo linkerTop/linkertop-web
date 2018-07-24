@@ -1,0 +1,19 @@
+{
+  "name": "linkertop",
+  "version": "0.0.1",
+  "description": "aabbcc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node index.js"
+  },
+  "keywords": [
+    "abc"
+  ],
+  "author": "yyd",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-ejs": "^4.1.2"
+  }
+}
