@@ -1,49 +1,44 @@
-/*!
- * koa-ejs - example/app.js
- * Copyright(c) 2017 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 const Koa = require('koa');
 const render = require('koa-ejs');
+const serve = require('koa-static');
+const Router = require('koa-router');
 const path = require('path');
 
 const app = new Koa();
+const route = new Router();
+
+let routerFunc = require('./routerFunc.js');
 
 render(app, {
 	root: path.join(__dirname, 'view'),
 	layout: 'template',
 	viewExt: 'html',
-	cache: true,
+	cache: false,
 	debug: true,
 });
 
-app.use(function (ctx, next) {
-	ctx.state = ctx.state || {};
-	ctx.state.now = new Date();
-	ctx.state.ip = ctx.ip;
-	ctx.state.version = '2.0.0';
-	return next();
-});
+app.use(serve(__dirname + '/public'));
 
-app.use(async function (ctx) {
-	const users = [{ name: 'Dead Horse' }, { name: 'Jack' }, { name: 'Tom' }];
-	await ctx.render('content', {
-		users
-	});
-});
+route.get('/', routerFunc.index) 			// 主页
+	.get('/service/project') 				// 服务->项目开发
+	.get('/service/investment')				// 服务->投资
+	.get('/service/linkeracademy')			// 服务->链客学院
+	.get('/service/mediapost')				// 媒体报道
+	.get('/activity')						// 活动
+	.get('/team')							// 团队
+	.get('/research')						// 研究院
+	.get('/techpost/news')					// 科技报道->快讯
+	.get('/techpost/topic')					// 科技报道->专题
+	.get('/techpost/activity')				// 科技报道->活动
+app.use(route.routes());
 
 if (process.env.NODE_ENV === 'test') {
 	module.exports = app.callback();
 } else {
-	app.listen(7001);
-	console.log('open http://localhost:7001');
+	app.listen(3000);
+	console.log('open http://localhost:3000');
 }
 
 app.on('error', function (err) {
