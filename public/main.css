@@ -1,6 +1,12 @@
 body {
 	margin: 0;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 header {
 	width: 100%;
 	background-color: #FFF;
@@ -89,7 +95,7 @@ header div#service-items {
 	display: none;
 	position: absolute;
 	float: left;
-	left: 90px;
+	left: 94px;
 	top: -5px;
 }
 
@@ -97,7 +103,7 @@ header div#tech-items {
 	display: none;
 	position: absolute;
 	float: left;
-	left: 393px;
+	left: 400px;
 	top: -5px;
 }
 
@@ -107,6 +113,20 @@ header div.another-link {
 
 header div.another-link img {
 	width: 35px;
+}
+
+header div.totop {
+	display: none;
+	padding: 10px;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	background-color: #EEE;
+}
+
+header div.totop:hover {
+	cursor: pointer;
+	background-color: #DDD;
 }
 
 main {
@@ -133,10 +153,25 @@ main div.ad-part {
 	position: relative;
 }
 
+main div.ad-part h1 {
+	color: #FFF;
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+
+main div.ad-part span {
+	color: #FFF;
+	font-size: 30px;
+}
+
 main div.ad-part div.ad-bg1 {
-	background: url('png/ad_bg2.png') center center no-repeat;
+	background: url('png/ad_bg2.jpg') center center no-repeat;
 	width: 100%;
 	height: 700px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 main div.ad-part div.select-part {
@@ -227,7 +262,15 @@ main div.service div.feature div.item {
 	align-items: center;
 }
 
-main div.service div.feature div.item img {
+main div.service div.feature div.item div.img-container {
+	height: 70px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main div.service div.feature div.item div.img-container img {
 	width: 70px;
 }
 
@@ -263,7 +306,7 @@ main div.activity div.block h2 {
 
 main div.activity div.block div {
 	width: 24%;
-	height: 240px;
+	height: 270px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -279,27 +322,244 @@ main div.activity div.block div#act1 {
 	background: url('png/act_bg1.jpg') center center no-repeat;
 	background-color: rgba(0, 0, 0, 0.6);
 	background-blend-mode: darken;
+	background-size: 100% 270px;
 }
 
 main div.activity div.block div#act2 {
 	background: url('png/act_bg2.jpg') center center no-repeat;
 	background-color: rgba(0, 0, 0, 0.6);
 	background-blend-mode: darken;
+	background-size: 100% 270px;
 }
 
 main div.activity div.block div#act3 {
 	background: url('png/act_bg3.jpg') center center no-repeat;
 	background-color: rgba(0, 0, 0, 0.6);
 	background-blend-mode: darken;
+	background-size: 100% 270px;
 }
 
 main div.activity div.block div#act4 {
 	background: url('png/act_bg4.jpg') center center no-repeat;
 	background-color: rgba(0, 0, 0, 0.6);
 	background-blend-mode: darken;
+	background-size: 100% 270px;
+}
+
+/* 我们的团队 */
+main div.team {
+	width: 1200px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-bottom: 30px;
+}
+
+main div.team h2 {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+main div.team h2 span {
+	border-bottom: 3px solid #333;
+}
+
+main div.team div.team-member {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+main div.team div.team-member div.member {
+	width: 400px;
+	height: 250px;
+	background: url('png/team_member1.png') center center no-repeat;
+	background-size: 300px 250px;
+	position: relative;
+}
+
+main div.team div.team-member div#boweimin {
+	background: url('png/team_member1.png') center center no-repeat;
+	background-size: 300px 250px
+}
+
+main div.team div.team-member div.member p.intro {
+	position: relative;
+	top: 50px;
+	left: 0px;
+	font-size: 14px;
+	font-weight: bold;
+	width: 200px;
+}
+
+main div.team div.team-member div.member span.name {
+	position: relative;
+	top: 40px;
+	left: 0px;
+	font-size: 20px;
+	font-weight: bold;
+} 
+
+main div.team div.team-member div.member span.prof {
+	position: relative;
+	top: 42px;
+	left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+main div.team div.team-member div.member p.another {
+	position: relative;
+	top: 30px;
+	left: 0px;
+	font-size: 12px;
+	width: 170px;
+}
+
+/* 链客研究院 */
+main div.academy {
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	color: #FFF;
+	background: url('png/academy_bg.jpg') center center no-repeat;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+main div.academy section {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+main div.academy h2 {
+	margin-bottom: 20px;
+}
+
+main div.academy h2 span {
+	border-bottom: 3px solid #FFF;
+}
+
+main div.academy div.msg {
+	width: 500px;
+}
+
+main div.academy div.more {
+	margin-top: 60px;
+	margin-bottom: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid #DDD;
+	border-radius: 10px;
+}
+
+main div.academy div.more:hover {
+	background-color: #FFF;
+	color: #000;
+	cursor: pointer;
+}
+
+/* 链客最新动态 */
+main div.news {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+main div.news h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+main div.news h2 span {
+	border-bottom: 3px solid #333;
+}
+
+main div.news div.more {
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid #5c38b3;
+	border-radius: 10px;
+	text-align: center;
+}
+
+main div.news div.more:hover {
+	cursor: pointer;
+	background-color: #5c38b3;
+	color: #FFF;
+}
+
+main div.news div.grid {
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+main div.news div.grid div {
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 20%;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+main div.news div.grid div:hover {
+	cursor: pointer;
+	background-color: #999;
+}
+
+main div.news div.grid div#news1 {
+	background: url('png/news_bg1.jpg') center center no-repeat;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: darken;
+}
+
+main div.news div.grid div#news2 {
+	background: url('png/news_bg2.jpg') center center no-repeat;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: darken;
+}
+
+main div.news div.grid div#news3 {
+	background: url('png/news_bg3.jpg') center center no-repeat;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: darken;
+}
+
+main div.news div.grid div#news4 {
+	background: url('png/news_bg4.jpg') center center no-repeat;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: darken;
 }
 
 /* 合作机构 */
+main div.cooperation {
+	margin-bottom: 60px;
+}
+
 main div.cooperation h2 {
 	text-align: center;
 	margin-bottom: 60px;
@@ -309,6 +569,25 @@ main div.cooperation h2 span {
 	border-bottom: 3px solid #333;
 }
 
+main div.cooperation div.line {
+	display: flex;
+	justify-content: space-between;
+}
+
+main div.cooperation div.line img:first-child {
+	border: 1px solid #DDD;
+}
+
+main div.cooperation div.line img {
+	width: 200px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border: 1px solid #DDD;
+	border-left: 0;
+}
+
 footer {
 	width: 100%;
 	background-color: #000;
@@ -316,6 +595,10 @@ footer {
 	font-size: 14px;
 	padding-top: 50px;
 	padding-bottom: 60px;
+}
+
+footer div.container {
+	position: relative;
 }
 
 footer div.footer-part {
@@ -348,10 +631,59 @@ footer div.joinus span {
 footer div.joinus span:hover {
 	background-color: #DDD;
 	cursor: pointer;
+	color: #000;
 }
+
+footer div.qrcode {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+footer div.qrcode p {
+	margin-top: 5px;
+	font-size: 20px;
+	text-align: center;
+}
+
 
 .container {
 	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* jobhunt */ 
+main div.joinus {
+	background: url('png/joinus_bg.jpg') top center no-repeat;
+	width: 100%;
+	height: 700px;
+	margin-top: 76px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #FFF;
+}
+
+main div.joinus h2 {
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+
+main div.joinus span {
+	font-size: 20px;
+}
+
+main div.joinus-part {
+	padding-top: 50px;
+}
+
+main div.joinus-part h2 {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+main div.joinus-part h2 span {
+	border-bottom: 3px solid #333;
 }
