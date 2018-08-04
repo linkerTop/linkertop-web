@@ -11,6 +11,9 @@ var routeFunc = function () {
 				ctx.response.body = 'bububu';
 			}
 			
+		},
+		academy: async function (ctx) {
+			await ctx.render('academy');
 		}
 	}
 	return that;

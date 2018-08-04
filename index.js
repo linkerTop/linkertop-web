@@ -23,14 +23,15 @@ render(app, {
 
 app.use(serve(__dirname + '/public'));
 
-route.get('/', routerFunc.index)							// 主页
-	.get('/jobs/:jobname', routerFunc.jobs);							// 工作机会 
+route.get('/', routerFunc.index)						// 主页
+	.get('/jobs/:jobname', routerFunc.jobs)				// 工作机会 
+	.get('/academy/more', routerFunc.academy);			// 研究院
 	// .get('/service/project') 								// 服务->项目开发
 	// .get('/service/investment')								// 服务->投资
 	// .get('/service/linkeracademy')							// 服务->链客学院
 	// .get('/service/mediapost')								// 媒体报道
 	// .get('/activity/:actname')								// 活动
-	// .get('/academy/more')									// 研究院
+	// .get('/academy/more')									
 	// .get('/techpost/news')									// 科技报道->快讯
 	// .get('/techpost/topic')									// 科技报道->专题
 	// .get('/techpost/activity')								// 科技报道->活动
