@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	font-family: Microsoft YaHei;
 }
 
 a {
@@ -65,7 +66,7 @@ header ul li:hover {
 header div.pop-menu {
 	border-radius: 10px;
 	background-color: #FFF;
-	box-shadow: 0px 2px 2px;
+	box-shadow: 0px 1px 2px;
 	padding-left: 10px;
 	padding-right: 10px;
 	font-weight: bold;
@@ -144,6 +145,10 @@ main div.container h2 {
 	font-size: 30px;
 }
 
+main div.container h2 span {
+	padding-bottom: 5px;
+}
+
 /* 广告部分 */
 main div.ad-part {
 	margin-left: 0;
@@ -210,6 +215,7 @@ main div.whoarewe h2 {
 
 main div.whoarewe h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
 main div.whoarewe div.intro {
@@ -270,6 +276,10 @@ main div.service div.feature div.item div.img-container {
 	align-items: center;
 }
 
+main div.service div.feature div.item div.img-container:hover {
+	
+}
+
 main div.service div.feature div.item div.img-container img {
 	width: 70px;
 }
@@ -289,6 +299,7 @@ main div.activity h2 {
 
 main div.activity h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
 main div.activity div.block {
@@ -312,11 +323,13 @@ main div.activity div.block div {
 	align-items: center;
 	justify-content: center;
 	color: #FFF;
+	position: relative;
 }
 
 main div.activity div.block div:hover {
 	cursor: pointer;
 }
+
 
 main div.activity div.block div#act1 {
 	background: url('png/act_bg1.jpg') center center no-repeat;
@@ -348,7 +361,7 @@ main div.activity div.block div#act4 {
 
 /* 我们的团队 */
 main div.team {
-	width: 1200px;
+	width: 1000px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	margin-bottom: 30px;
@@ -361,6 +374,7 @@ main div.team h2 {
 
 main div.team h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
 main div.team div.team-member {
@@ -370,7 +384,7 @@ main div.team div.team-member {
 }
 
 main div.team div.team-member div.member {
-	width: 400px;
+	width: 290px;
 	height: 250px;
 	background: url('png/team_member1.png') center center no-repeat;
 	background-size: 300px 250px;
@@ -385,7 +399,7 @@ main div.team div.team-member div#boweimin {
 main div.team div.team-member div.member p.intro {
 	position: relative;
 	top: 50px;
-	left: 0px;
+	left: -40px;
 	font-size: 14px;
 	font-weight: bold;
 	width: 200px;
@@ -394,7 +408,7 @@ main div.team div.team-member div.member p.intro {
 main div.team div.team-member div.member span.name {
 	position: relative;
 	top: 40px;
-	left: 0px;
+	left: -40px;
 	font-size: 20px;
 	font-weight: bold;
 } 
@@ -402,7 +416,7 @@ main div.team div.team-member div.member span.name {
 main div.team div.team-member div.member span.prof {
 	position: relative;
 	top: 42px;
-	left: 10px;
+	left: -30px;
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -410,7 +424,7 @@ main div.team div.team-member div.member span.prof {
 main div.team div.team-member div.member p.another {
 	position: relative;
 	top: 30px;
-	left: 0px;
+	left: -40px;
 	font-size: 12px;
 	width: 170px;
 }
@@ -481,6 +495,7 @@ main div.news h2 {
 
 main div.news h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
 main div.news div.more {
@@ -567,6 +582,7 @@ main div.cooperation h2 {
 
 main div.cooperation h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
 main div.cooperation div.line {
@@ -574,11 +590,11 @@ main div.cooperation div.line {
 	justify-content: space-between;
 }
 
-main div.cooperation div.line img:first-child {
+main div.cooperation div.line div.container:first-child {
 	border: 1px solid #DDD;
 }
 
-main div.cooperation div.line img {
+main div.cooperation div.line div.container {
 	width: 200px;
 	padding-left: 25px;
 	padding-right: 25px;
@@ -587,6 +603,49 @@ main div.cooperation div.line img {
 	border: 1px solid #DDD;
 	border-left: 0;
 }
+
+main div.cooperation div.line div.container div {
+	width: 200px;
+	height: 50px;
+}
+
+main div.cooperation div.line div.container div:hover {
+	cursor: pointer;
+}
+
+main div.cooperation div.line div.container div#coop1 {
+	background: url('/png/coop1.jpg') no-repeat bottom left;
+}
+
+main div.cooperation div.line div.container div#coop2 {
+	background: url('/png/coop2.jpg') no-repeat bottom left;
+}
+
+main div.cooperation div.line div.container div#coop3 {
+	background: url('/png/coop3.jpg') no-repeat bottom left;
+	background-size: 200px 100px;
+}
+
+main div.cooperation div.line div.container div#coop4 {
+	background: url('/png/coop4.jpg') no-repeat bottom left;
+	background-size: 200px 100px;
+}
+
+main div.cooperation div.line div.container div#coop1:hover {
+	background-position: 0 0;
+}
+
+main div.cooperation div.line div.container div#coop2:hover {
+	background-position: 0 0;
+}
+
+main div.cooperation div.line div.container div#coop3:hover {
+	background-position: 0 0;
+} 
+
+main div.cooperation div.line div.container div#coop4:hover {
+	background-position: 0 0;
+} 
 
 footer {
 	width: 100%;
