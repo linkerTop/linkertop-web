@@ -27,6 +27,8 @@ tech_items.addEventListener('click', function (e) {
 window.addEventListener('scroll', function () {
 	if (window.scrollY > 0) {
 		totop.style.display = 'block';
+	} else {
+		totop.style.display = 'none';
 	}
 });
 
