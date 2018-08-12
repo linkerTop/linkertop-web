@@ -25,8 +25,9 @@ app.use(serve(__dirname + '/public'));
 
 route.get('/', routerFunc.index)						// 主页
 	.get('/jobs/:jobname', routerFunc.jobs)				// 工作机会 
-	.get('/academy/more', routerFunc.academy);			// 研究院
-	// .get('/service/project') 								// 服务->项目开发
+	.get('/academy/more', routerFunc.academy)			// 研究院
+	.get('/team', routerFunc.team)						// 我们的团队
+	.get('/service/:name', routerFunc.service); 		// 服务->项目开发
 	// .get('/service/investment')								// 服务->投资
 	// .get('/service/linkeracademy')							// 服务->链客学院
 	// .get('/service/mediapost')								// 媒体报道

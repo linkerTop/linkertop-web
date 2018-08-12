@@ -270,14 +270,63 @@ main div.service div.feature div.item {
 
 main div.service div.feature div.item div.img-container {
 	height: 70px;
-	width: 100%;
+	width: 70px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+main div.service div.feature div.item div.img-container#a {
+	background: url('/png/service_icon1.png') no-repeat 0 5px;
+}
+
+main div.service div.feature div.item div.img-container#a:hover {
+	background: url('/png/service_icon1.png') no-repeat -70px 5px;
+}
+
+main div.service div.feature div.item div.img-container#a:active {
+	background: url('/png/service_icon1.png') no-repeat -140px 5px;
+}
+
+main div.service div.feature div.item div.img-container#b {
+	background: url('/png/service_icon2.png') no-repeat 0 0;
+}
+
+main div.service div.feature div.item div.img-container#b:hover {
+	background: url('/png/service_icon2.png') no-repeat -70px 0;
+}
+
+main div.service div.feature div.item div.img-container#b:active {
+	background: url('/png/service_icon2.png') no-repeat -140px 0;
+}
+
+
+main div.service div.feature div.item div.img-container#c {
+	background: url('/png/service_icon3.png') no-repeat 0 10px;
+}
+
+main div.service div.feature div.item div.img-container#c:hover {
+	background: url('/png/service_icon3.png') no-repeat -70px 10px;
+}
+
+main div.service div.feature div.item div.img-container#c:active {
+	background: url('/png/service_icon3.png') no-repeat -140px 10px;
+}
+
+main div.service div.feature div.item div.img-container#d {
+	background: url('/png/service_icon4.png') no-repeat 0 0;
+}
+
+main div.service div.feature div.item div.img-container#d:hover {
+	background: url('/png/service_icon4.png') no-repeat -70px 0;
+}
+
+main div.service div.feature div.item div.img-container#d:active {
+	background: url('/png/service_icon4.png') no-repeat -140px 0;
+}
+
 main div.service div.feature div.item div.img-container:hover {
-	
+	cursor: pointer;
 }
 
 main div.service div.feature div.item div.img-container img {
@@ -327,9 +376,41 @@ main div.activity div.block div {
 }
 
 main div.activity div.block div:hover {
-	cursor: pointer;
+	background-color: rgba(255, 255, 255, 1);
+	background-blend-mode: normal;
 }
 
+main div.activity div.block div:hover h2 {
+	display: none;
+}
+
+main div.activity div.block div:hover span {
+	display: none;
+}
+
+main div.activity div.block div div.hidden {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+main div.activity div.block div:hover div.hidden {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main div.activity div.block div button {
+	cursor: pointer;
+	width: 150px;
+	height: 40px;
+	border: 1px solid #FFF;
+	border-radius: 20px;
+	background-color: transparent;
+	color: #FFF;
+	font-size: 20px;
+}
 
 main div.activity div.block div#act1 {
 	background: url('png/act_bg1.jpg') center center no-repeat;
@@ -739,6 +820,7 @@ main div.joinus span {
 
 main div.joinus-part {
 	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 main div.joinus-part h2 {
@@ -748,6 +830,62 @@ main div.joinus-part h2 {
 
 main div.joinus-part h2 span {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
+}
+
+main div.joinus-part div.job-list {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+main div.joinus-part div.job-list div.job-item {
+	width: 271px;
+	color: #000;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 1px solid #DDD;
+}
+
+main div.joinus-part div.job-list div.job-item:hover {
+	background: linear-gradient(90deg, #365cd3, #7a1d9a);
+	color: #FFF;
+}
+main div.joinus-part div.job-list div.job-item:hover button {
+	color: #FFF;
+	border: 1px solid #FFF;
+}
+
+main div.joinus-part div.job-list div.job-item h2 {
+	font-size: 25px;
+	text-align: left;
+	margin: 0;
+}
+
+main div.joinus-part div.job-list div.job-item span {
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+main div.joinus-part div.job-list div.job-item button:hover {
+	cursor: pointer;
+}
+
+main div.joinus-part div.job-list div.job-item button {
+	float: right;
+	bottom: 0px;
+	right: 0px;
+	color: transparent;
+	-webkit-background-clip: text;
+	background-image: linear-gradient(90deg, #365cd3, #7a1d9a);
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 15px;
+	border: 1px solid #365cd3;
 }
 
 /* academy page */
@@ -822,3 +960,95 @@ main div.academy-content div.academy-research img {
 	width: 100%;
 }
 
+/* team page */
+main div.team-page {
+	background: url('png/team_page_bg.jpg') top center no-repeat;
+}
+
+main div.team-page h2 {
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+
+main div.team-page span {
+	font-size: 20px;
+	text-shadow: 0px 0px 2px #CCC;
+}
+
+main div.team-page-content {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+main div.team-page-content div.team-member {
+	box-shadow: 2px 3px 3px 3px #DDD;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 15px;
+}
+
+main div.team-page-content div.photo-part {
+	margin: 15px;
+	display: inline-block;
+}
+
+main div.team-page-content div.photo-part img {
+	box-shadow: 1px 2px 2px 2px #DDD;
+	width: 200px;
+}
+
+main div.team-page-content div.intro-part {
+	margin: 25px;
+	display: inline-block;
+}
+
+main div.team-page-content div.intro-part h2 {
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+main div.team-page-content div.intro-part span {
+	font-weight: bold;
+}
+
+main div.team-page-content div.intro-part p {
+	margin: 0;
+	line-height: 25px;
+}
+
+/* project 项目开发 */
+main div.project-page {
+	height: 250px;
+	background-color: #5b3e4b;
+}
+
+main div.project-page h2 {
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+
+main div.project-page span {
+	font-size: 20px;
+	text-shadow: 0px 0px 2px #CCC;
+}
+
+main div.project-page-content {
+	margin-bottom: 60px;
+}
+
+main div.project-page-content h2 {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+main div.project-page-content h2 span {
+	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
+}
+
+main div.project-page-content p {
+	text-indent: 32px;
+	font-size: 16px;
+}

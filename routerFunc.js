@@ -14,6 +14,15 @@ var routeFunc = function () {
 		},
 		academy: async function (ctx) {
 			await ctx.render('academy');
+		},
+		team: async function (ctx) {
+			await ctx.render('team');
+		},
+		service: async function (ctx) {
+			let name = ctx.params.name;
+			if (name === 'project') {
+				await ctx.render('service_project');
+			}
 		}
 	}
 	return that;
