@@ -59,7 +59,7 @@ header ul li {
 }
 
 header ul li:hover {
-	border-bottom: 3px solid #333;
+	border-bottom: 3px solid #553eb8;
 }
 
 
@@ -81,6 +81,7 @@ header div.pop-menu div.item {
 
 header div.pop-menu div.item:hover {
 	border-bottom: 3px solid #333;
+	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 	margin-bottom: 4px;
 }
 
@@ -392,7 +393,7 @@ main div.activity div.block div div.hidden {
 	display: none;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 main div.activity div.block div:hover div.hidden {
@@ -401,15 +402,9 @@ main div.activity div.block div:hover div.hidden {
 	align-items: center;
 }
 
-main div.activity div.block div button {
-	cursor: pointer;
-	width: 150px;
-	height: 40px;
-	border: 1px solid #FFF;
-	border-radius: 20px;
-	background-color: transparent;
-	color: #FFF;
-	font-size: 20px;
+main div.activity div.block div img {
+	width: 170px;
+	height: 50px;
 }
 
 main div.activity div.block div#act1 {
@@ -450,12 +445,19 @@ main div.team {
 
 main div.team h2 {
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 }
 
 main div.team h2 span {
 	border-bottom: 3px solid #333;
 	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
+}
+
+main div.team div.intro-more {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+	width: 151px;
 }
 
 main div.team div.team-member {
@@ -571,7 +573,7 @@ main div.news {
 
 main div.news h2 {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 main div.news h2 span {
@@ -580,28 +582,13 @@ main div.news h2 span {
 }
 
 main div.news div.more {
-	width: 100px;
+	width: 153px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10px;
-	margin-bottom: 50px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	border: 1px solid #5c38b3;
-	border-radius: 10px;
-	text-align: center;
-}
-
-main div.news div.more:hover {
-	cursor: pointer;
-	background-color: #5c38b3;
-	color: #FFF;
+	margin-bottom: 60px;
 }
 
 main div.news div.grid {
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -620,6 +607,25 @@ main div.news div.grid div {
 	font-size: 20px;
 	font-weight: bold;
 	color: #FFF;
+	position: relative;
+}
+
+main div.news div.grid div div.background {
+	display: none;
+}
+
+main div.news div.grid div:hover div.background {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background: linear-gradient(90deg, rgba(42, 64, 121, 0.7), rgba(86, 38, 102, 0.7));
+	z-index: 1;
+}
+
+main div.news div.grid div:hover span {
+	z-index: 2;
 }
 
 main div.news div.grid div:hover {
