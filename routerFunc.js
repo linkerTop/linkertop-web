@@ -36,7 +36,38 @@ var	routeFunc = function () {
 			},
 			edit: async function (ctx) {
 				
+			},
+			news: async function (ctx) {
+				let id = ctx.params.id;
+				if (id === 'list') {
+					await ctx.render('news/list', {
+						layout: 'techpost_template'
+					});
+				} else {
+					
+				}
+			},
+			topic: async function (ctx) {
+				let id = ctx.params.id;
+				if (id === 'list') {
+					await ctx.render('topic/list', {
+						layout: 'techpost_template'
+					});
+				} else {
+					
+				}
+			},
+			activity: async function (ctx) {
+				let id = ctx.params.id;
+				if (id === 'list') {
+					await ctx.render('activity/list', {
+						layout: 'techpost_template'
+					});
+				} else {
+					
+				}
 			}
+			
 		};
 	return that;
 }

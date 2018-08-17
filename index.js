@@ -35,9 +35,9 @@ route.get('/', routerFunc.index)						// 主页
 	// .get('/service/mediapost')								// 媒体报道
 	// .get('/activity/:actname')								// 活动
 	// .get('/academy/more')									
-	// .get('/techpost/news')									// 科技报道->快讯
-	// .get('/techpost/topic')									// 科技报道->专题
-	// .get('/techpost/activity')								// 科技报道->活动
+	.get('/techpost/news/:id', routerFunc.news)			// 科技报道->快讯
+	.get('/techpost/topic/:id', routerFunc.topic)		// 科技报道->专题
+	.get('/techpost/activity/:id', routerFunc.activity)	// 科技报道->活动
 	.get('/admin', routerFunc.admin)					// 管理员
 	.post('/admin', routerFunc.admin)					// 管理员
 	.get('/edit/:page', routerFunc.edit);				// 编辑页面
