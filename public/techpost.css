@@ -81,10 +81,13 @@ header div.totop:hover {
 	cursor: pointer;
 	background-color: #DDD;
 }
-/* 快讯 */
+
+/* main 部分 */
 main {
 	margin-top: 78px;
 }
+
+/* 快讯 */
 main div.news {
 	width: 700px;
 	margin-bottom: 60px;
@@ -152,6 +155,98 @@ main div.news div.news-intro img.share-button {
 	top: 28px;
 	width: 35px;
 }
+
+/* 专题 */
+main div.topic-banner {
+	width: 100%;
+	background: url('/png/tech_topic_banner.jpg') no-repeat top center;
+	height: 600px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #FFF;
+}
+
+main div.topic-banner h1 {
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+main div.topic-banner span {
+	font-size: 20px;
+}
+
+main div.topic-banner div.selector {
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	bottom: 25px;
+}
+
+main div.topic-banner div.selector div.bar {
+	width: 38px;
+	height: 4px;
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+}
+
+main div.topic-banner div.selector div.selected {
+	background-color: #FFF;
+}
+
+main div.topic-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}
+
+main div.topic-content div.topic-item {
+	width: 48%;
+	margin-bottom: 15px;
+}
+
+main div.topic-content div.topic-item div.img {
+	height: 300px;
+}
+
+main div.topic-content div.topic-item div.img#img1 {
+	background: url('/png/tech_activity1.jpg') no-repeat center center;
+	background-size: 130%;
+}
+main div.topic-content div.topic-item div.img#img2 {
+	background: url('/png/tech_activity2.jpg') no-repeat center center;
+	background-size: 130%;
+}
+main div.topic-content div.topic-item div.img#img3 {
+	background: url('/png/tech_activity3.jpg') no-repeat center center;
+	background-size: 130%;
+}
+main div.topic-content div.topic-item div.img#img4 {
+	background: url('/png/tech_activity4.jpg') no-repeat center center;
+	background-size: 130%;
+}
+main div.topic-content div.topic-item div.img#img5 {
+	background: url('/png/tech_activity4.jpg') no-repeat center center;
+	background-size: 130%;
+}
+main div.topic-content div.topic-item div.img#img6 {
+	background: url('/png/tech_activity3.jpg') no-repeat center center;
+	background-size: 130%;
+}
+
+main div.topic-content div.topic-item p {
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+
 /* 活动页面 */
 main div.activity h2 {
 	margin-bottom: 60px;
