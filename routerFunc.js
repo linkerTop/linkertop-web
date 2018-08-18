@@ -27,7 +27,9 @@ var	routeFunc = function () {
 			},
 			admin: async function (ctx) {
 				if (ctx.request.method === 'GET') {
-					await ctx.render('login');
+					await ctx.render('login', {
+						layout: 'simplte'
+					});
 				} else if (ctx.request.method === 'POST') {
 					let postData = ctx.request.body;
 					console.log(postData);
@@ -36,6 +38,11 @@ var	routeFunc = function () {
 			},
 			edit: async function (ctx) {
 				
+			},
+			techpost: async function (ctx) {
+				await ctx.render('techpost', {
+					layout: 'techpost_template'
+				});
 			},
 			news: async function (ctx) {
 				let id = ctx.params.id;

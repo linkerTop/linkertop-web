@@ -34,7 +34,8 @@ route.get('/', routerFunc.index)						// 主页
 	// .get('/service/linkeracademy')							// 服务->链客学院
 	// .get('/service/mediapost')								// 媒体报道
 	// .get('/activity/:actname')								// 活动
-	// .get('/academy/more')									
+	// .get('/academy/more')
+	.get('/techpost', routerFunc.techpost)				// 科技报道	
 	.get('/techpost/news/:id', routerFunc.news)			// 科技报道->快讯
 	.get('/techpost/topic/:id', routerFunc.topic)		// 科技报道->专题
 	.get('/techpost/activity/:id', routerFunc.activity)	// 科技报道->活动
