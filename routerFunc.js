@@ -28,7 +28,7 @@ var	routeFunc = function () {
 			admin: async function (ctx) {
 				if (ctx.request.method === 'GET') {
 					await ctx.render('login', {
-						layout: 'simplte'
+						layout: 'simple'
 					});
 				} else if (ctx.request.method === 'POST') {
 					let postData = ctx.request.body;
@@ -44,6 +44,26 @@ var	routeFunc = function () {
 					layout: 'techpost_template'
 				});
 			},
+			report: async function (ctx) {
+				let id = ctx.params.id;
+				let post = require('./data/report_post.js');
+				
+				if (id === undefined && post[id - 1] === undefined) {
+					await ctx.render('404', {
+						layout: 'simple' 
+					});
+					return;
+				}
+				
+				let template = {
+					layout: 'techpost_template',
+					type: 'report-page'
+				};
+				let final_temp = Object.assign(post[0], template)
+				// console.log(final_temp);
+				await ctx.render('techpost_post', final_temp);
+
+			},
 			news: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
@@ -51,7 +71,22 @@ var	routeFunc = function () {
 						layout: 'techpost_template'
 					});
 				} else {
+					let post = require('./data/news_post.js');
 					
+					if (post[id - 1] === undefined) {
+						await ctx.render('404', {
+							layout: 'simple' 
+						});
+						return;
+					}
+					
+					let template = {
+						layout: 'techpost_template',
+						type: 'news-page'
+					};
+					let final_temp = Object.assign(post[0], template)
+					// console.log(final_temp);
+					await ctx.render('techpost_post', final_temp);
 				}
 			},
 			topic: async function (ctx) {
@@ -61,7 +96,21 @@ var	routeFunc = function () {
 						layout: 'techpost_template'
 					});
 				} else {
+					let post = require('./data/topic_post.js');
 					
+					if (post[id - 1] === undefined) {
+						await ctx.render('404', {
+							layout: 'simple' 
+						});
+						return;
+					}
+					
+					let template = {
+						layout: 'techpost_template',
+						type: 'topic-page'
+					};
+					let final_temp = Object.assign(post[0], template)
+					await ctx.render('techpost_post', final_temp);
 				}
 			},
 			activity: async function (ctx) {
@@ -71,7 +120,21 @@ var	routeFunc = function () {
 						layout: 'techpost_template'
 					});
 				} else {
+					let post = require('./data/activity_post.js');
+					if (post[id - 1] === undefined) {
+						await ctx.render('404', {
+							layout: 'simple' 
+						});
+						return;
+					}
 					
+					let template = {
+						layout: 'techpost_template',
+						type: 'activity-page'
+					};
+					let final_temp = Object.assign(post[0], template)
+					// console.log(final_temp);
+					await ctx.render('techpost_post', final_temp);
 				}
 			}
 			

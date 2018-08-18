@@ -1,0 +1,37 @@
+<main>
+	<div class="news-bg <%= type%>">
+	</div>
+	<div class="container page-content">
+		<div class="left">
+			<img class="intro_img" src="<%= intro_img%>" />
+			<h3>热门推荐</h3>
+			<div class="recommend-item">
+				<h4>Matryx，来自未来的科研协作平台</h4>
+				<p>链客工场</p>
+			</div>
+			<div class="recommend-item">
+				<h4>迪拜的“雄心”：2020年半数政府……</h4>
+				<p>Linker</p>
+			</div>
+			<div class="recommend-item">
+				<h4>北京大学区块链总裁班</h4>
+				<p>链客工场一号编辑</p>
+			</div>
+		</div>
+		<div class="right">
+			<div class="title">
+				<p class="post-type">·<%= post_type %></p>
+				<h1><%= title %></h1>
+				<p class="intro"><%= intro %></p>
+			</div>
+			<div class="author-time">
+				<img src="<%= avatar %>">
+				<p class="author"><%= author %></p>
+				<p class="post-time"><%= post_time %></p>
+			</div>
+			<% content.forEach(function (p) {%>
+			<p class="content"><%= p %></p>
+			<% }) %>
+		</div>
+	</div>
+</main>

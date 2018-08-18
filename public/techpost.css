@@ -602,6 +602,116 @@ main div.activity div.past-activity {
 	flex-wrap: wrap;
 }
 
+/* 详情（资讯，快讯，专题，活动） */
+main div.news-bg {
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+main div.activity-page {
+	background-color: #facd89;
+}
+
+main div.news-page {
+	background-color: #acd598;
+}
+
+main div.report-page {
+	background-color: #d2d2d2;
+}
+
+main div.topic-page {
+	background-color: #84ccc9;
+}
+
+main div.page-content {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 170px;
+}
+
+main div.page-content div.left {
+	width: 33%;
+}
+
+main div.page-content div.left img.intro_img {
+	width: 96%;
+	padding: 2%;
+	display: block;
+	background-color: #FFF;
+}
+
+main div.page-content div.left h3 {
+	margin-top: 40px;
+	font-size: 30px;
+}
+
+main div.page-content div.left div.recommend-item h4 {
+	margin-bottom: 6px;
+}
+
+main div.page-content div.left div.recommend-item p {
+	margin-top: 6px;
+	color: #999;
+}
+
+main div.page-content div.right {
+	width: 62%;
+	margin-bottom: 50px;
+}
+
+main div.page-content div.right div.title {
+	height: 125px;
+}
+
+main div.page-content div.right p.post-type {
+	margin-top: 5px;
+	font-size: 14px;
+}
+
+main div.page-content div.right h1 {
+	font-size: 20px;
+}
+
+main div.page-content div.right p.intro {
+	font-size: 12px;
+	margin-bottom: 30px;
+}
+
+main div.page-content div.right div.author-time {
+	position: relative;
+	padding-left: 75px;
+	margin-bottom: 90px;
+}
+
+main div.page-content div.right div.author-time img {
+	position: absolute;
+	left: 0;
+	left: 0;
+	height: 40px;
+	border-radius: 20px;
+}
+
+main div.page-content div.right div.author-time p.author {
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+main div.page-content div.right div.author-time p.post-time {
+	margin-top: 5px;
+	font-size: 12px;
+	color: #999;
+}
+
+main div.page-content div.right p.content {
+	font-size: 16px;
+	text-indent: 28px;
+}
+
+
 /* 页脚 */
 footer {
 	width: 100%;
