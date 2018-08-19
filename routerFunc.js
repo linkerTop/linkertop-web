@@ -46,7 +46,7 @@ var	routeFunc = function () {
 			},
 			report: async function (ctx) {
 				let id = ctx.params.id;
-				let post = require('./data/report_post.js');
+				let post = require('./data/report_post.json');
 				
 				if (id === undefined && post[id - 1] === undefined) {
 					await ctx.render('404', {
@@ -59,19 +59,22 @@ var	routeFunc = function () {
 					layout: 'techpost_template',
 					type: 'report-page'
 				};
-				let final_temp = Object.assign(post[0], template)
-				// console.log(final_temp);
+				let final_temp = Object.assign(post[id - 1], template)
 				await ctx.render('techpost_post', final_temp);
 
 			},
 			news: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					await ctx.render('news/list', {
+					let post_list = require('./data/news_list');
+					let template = {
 						layout: 'techpost_template'
-					});
+					}
+					let final_temp = Object.assign(post_list, template);
+					
+					await ctx.render('news/list', final_temp);
 				} else {
-					let post = require('./data/news_post.js');
+					let post = require('./data/news_post.json');
 					
 					if (post[id - 1] === undefined) {
 						await ctx.render('404', {
@@ -84,19 +87,22 @@ var	routeFunc = function () {
 						layout: 'techpost_template',
 						type: 'news-page'
 					};
-					let final_temp = Object.assign(post[0], template)
-					// console.log(final_temp);
+					let final_temp = Object.assign(post[id - 1], template)
 					await ctx.render('techpost_post', final_temp);
 				}
 			},
 			topic: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					await ctx.render('topic/list', {
+					let post_list = require('./data/topic_list');
+					let template = {
 						layout: 'techpost_template'
-					});
+					}
+					let final_temp = Object.assign(post_list, template);
+					
+					await ctx.render('topic/list', final_temp);
 				} else {
-					let post = require('./data/topic_post.js');
+					let post = require('./data/topic_post.json');
 					
 					if (post[id - 1] === undefined) {
 						await ctx.render('404', {
@@ -109,7 +115,7 @@ var	routeFunc = function () {
 						layout: 'techpost_template',
 						type: 'topic-page'
 					};
-					let final_temp = Object.assign(post[0], template)
+					let final_temp = Object.assign(post[id - 1], template)
 					await ctx.render('techpost_post', final_temp);
 				}
 			},
@@ -132,8 +138,7 @@ var	routeFunc = function () {
 						layout: 'techpost_template',
 						type: 'activity-page'
 					};
-					let final_temp = Object.assign(post[0], template)
-					// console.log(final_temp);
+					let final_temp = Object.assign(post[id - 1], template)
 					await ctx.render('techpost_post', final_temp);
 				}
 			}

@@ -1,46 +1,20 @@
 <main>
 <div class="container news">
-	<h1>今天</h1>
+	<% list.forEach(function (time) { %>
+	<h1><%= time.date %></h1>
+	<% time.posts.forEach (function (post) { %>
 	<div class="news-intro">
-		<h2>区块链来了！传统产业人的焦虑与培训市场的“陷阱”</h2>
-		<p class="send-time">51分钟前</p>
-		<p class="main-body">互联网风风火火二十多年来，去年还在热烈讨论共享经济，今年就被区块链的概念盖过了风头。</p>
-		<p class="main-body">在今年1月25日的冬季达沃斯世界经济论坛上，中国区块链应用研究中心发布了《中国区块链行业发展报告2018》。报告显示，中国在区块链专利、区块链融资的增速远超过美国，领先全球。其中，阿里巴巴成为全球申请区块链专利最多的企业。</p>
+		<h2><%= post.title %></h2>
+		<p class="send-time"><%= post.post_time %></p>
+		<% post.content.forEach(function (part) { %>
+			<p class="main-body"><%= part %></p>
+		<% }) %>
 		<div class="button">
-			<a href="/techpost/news/1"><button>查看详情 ►</button></a>
+			<a href="<%= post.link %>"><button>查看详情 ►</button></a>
 		</div>
 		<img class="share-button" src="/png/share-button.png"/>
 	</div>
-	<div class="news-intro">
-		<h2>区块链来了！传统产业人的焦虑与培训市场的“陷阱”</h2>
-		<p class="send-time">51分钟前</p>
-		<p class="main-body">互联网风风火火二十多年来，去年还在热烈讨论共享经济，今年就被区块链的概念盖过了风头。</p>
-		<p class="main-body">在今年1月25日的冬季达沃斯世界经济论坛上，中国区块链应用研究中心发布了《中国区块链行业发展报告2018》。报告显示，中国在区块链专利、区块链融资的增速远超过美国，领先全球。其中，阿里巴巴成为全球申请区块链专利最多的企业。</p>
-		<div class="button">
-			<a href="/techpost/news/1"><button>查看详情 ►</button></a>
-		</div>
-		<img class="share-button" src="/png/share-button.png"/>
-	</div>
-	<h1>昨天</h1>
-	<div class="news-intro">
-		<h2>区块链来了！传统产业人的焦虑与培训市场的“陷阱”</h2>
-		<p class="send-time">51分钟前</p>
-		<p class="main-body">互联网风风火火二十多年来，去年还在热烈讨论共享经济，今年就被区块链的概念盖过了风头。</p>
-		<p class="main-body">在今年1月25日的冬季达沃斯世界经济论坛上，中国区块链应用研究中心发布了《中国区块链行业发展报告2018》。报告显示，中国在区块链专利、区块链融资的增速远超过美国，领先全球。其中，阿里巴巴成为全球申请区块链专利最多的企业。</p>
-		<div class="button">
-			<a href="/techpost/news/1"><button>查看详情 ►</button></a>
-		</div>
-		<img class="share-button" src="/png/share-button.png"/>
-	</div>
-	<div class="news-intro">
-		<h2>区块链来了！传统产业人的焦虑与培训市场的“陷阱”</h2>
-		<p class="send-time">51分钟前</p>
-		<p class="main-body">互联网风风火火二十多年来，去年还在热烈讨论共享经济，今年就被区块链的概念盖过了风头。</p>
-		<p class="main-body">在今年1月25日的冬季达沃斯世界经济论坛上，中国区块链应用研究中心发布了《中国区块链行业发展报告2018》。报告显示，中国在区块链专利、区块链融资的增速远超过美国，领先全球。其中，阿里巴巴成为全球申请区块链专利最多的企业。</p>
-		<div class="button">
-			<a href="/techpost/news/1"><button>查看详情 ►</button></a>
-		</div>
-		<img class="share-button" src="/png/share-button.png"/>
-	</div>
+	<% }) %>
+	<% }) %>
 </div>
 </main>
