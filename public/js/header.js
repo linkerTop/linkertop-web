@@ -6,20 +6,20 @@ var index = document.getElementById('index'),
 	totop = document.getElementById('totop');
 	
 // 服务
-service.addEventListener('click', function (e) {
+service.addEventListener('mouseenter', function (e) {
 	service_items.style.display = 'block';
 });
 
-service_items.addEventListener('click', function (e) {
+service_items.addEventListener('mouseleave', function (e) {
 	service_items.style.display = 'none';
 });
 
 // 活动
-tech.addEventListener('click', function (e) {
+tech.addEventListener('mouseenter', function (e) {
 	tech_items.style.display = 'block';
 });
 
-tech_items.addEventListener('click', function (e) {
+tech_items.addEventListener('mouseleave', function (e) {
 	tech_items.style.display = 'none';
 });
 
@@ -34,6 +34,6 @@ window.addEventListener('scroll', function () {
 
 // 返回页首
 totop.addEventListener('click', function (e) {
-	scroll(0, 0);
+	scrollTo({"behavior": "smooth", "top": 0});
 	totop.style.display = 'none';
 });

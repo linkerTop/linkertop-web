@@ -94,7 +94,7 @@ var	routeFunc = function () {
 			topic: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					let post_list = require('./data/topic_list');
+					let post_list = require('./data/topic_list.json');
 					let template = {
 						layout: 'techpost_template'
 					}
@@ -122,11 +122,14 @@ var	routeFunc = function () {
 			activity: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					await ctx.render('activity/list', {
+					let post_list = require('./data/activity_list.json');
+					let template = {
 						layout: 'techpost_template'
-					});
+					}
+					let final_temp = Object.assign(post_list, template);
+					await ctx.render('activity/list', final_temp);
 				} else {
-					let post = require('./data/activity_post.js');
+					let post = require('./data/activity_post.json');
 					if (post[id - 1] === undefined) {
 						await ctx.render('404', {
 							layout: 'simple' 
