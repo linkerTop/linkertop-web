@@ -50,7 +50,6 @@ header ul {
 
 header ul li {
 	display: inline;
-	font-weight: bold;
 	margin-right: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -69,7 +68,6 @@ header div.pop-menu {
 	box-shadow: 0px 1px 2px;
 	padding-left: 20px;
 	padding-right: 20px;
-	font-weight: bold;
 }
 
 header div.pop-menu div.item {
@@ -109,12 +107,28 @@ header div#tech-items {
 	top: -5px;
 }
 
-header div.another-link {
+header div.lang-change {
 	width: 5%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-header div.another-link img {
-	width: 35px;
+header div.lang-change div.lang {
+	width: 33px;
+	height: 30px;
+	cursor: pointer;
+}
+
+header div.lang-change div.en {
+	background: url('/png/lang.png') no-repeat -33px top;
+	background-size: 200%;
+}
+
+header div.lang-change div.zh {
+	background: url('/png/lang.png') no-repeat 0px top;
+	background-size: 200%;
 }
 
 header div.totop {

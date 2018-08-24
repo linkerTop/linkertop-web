@@ -3,7 +3,8 @@ var index = document.getElementById('index'),
 	tech = document.getElementById('tech'),
 	service_items = document.getElementById('service-items'),
 	tech_items = document.getElementById('tech-items'),
-	totop = document.getElementById('totop');
+	totop = document.getElementById('totop'),
+	lang = document.getElementById('lang');
 	
 // 服务
 service.addEventListener('mouseenter', function (e) {
@@ -21,6 +22,19 @@ tech.addEventListener('mouseenter', function (e) {
 
 tech_items.addEventListener('mouseleave', function (e) {
 	tech_items.style.display = 'none';
+});
+
+// 语言切换
+lang.addEventListener('click', function () {
+	if (lang.classList.contains('en')) {
+		lang.classList.remove('en');
+		lang.classList.add('zh');
+		localStorage.lang = 'en';
+	} else {
+		lang.classList.remove('zh');
+		lang.classList.add('en');
+		localStorage.lang = 'zh';
+	}
 });
 
 // 向下滚即出现按钮
