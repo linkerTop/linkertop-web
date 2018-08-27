@@ -22,6 +22,32 @@
 	* author (int) 同User.id
 	* view (int default 0)
 	
+### SQL
+```sql
+CREATE DATABASE IF NOT EXISTS `linkertop_web` DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `linkertop_web`;
+CREATE TABLE IF NOT EXISTS `user` (
+	`id` INT AUTO_INCREMENT,
+	`username` VARCHAR(128) NOT NULL,
+	`password` VARCHAR(128) NOT NULL,
+	PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS `post` (
+	`id` INT AUTO_INCREMENT,
+	`type` VARCHAR(64) NOT NULL,
+	`title` VARCHAR(64) NOT NULL,
+	`intro` VARCHAR(64) NOT NULL,
+	`intro_img` VARCHAR(256) DEFAULT `default.jpg`,
+	`content` TEXT,
+	`create_time` DATETIME,
+	`update_time` DATETIME,
+	`author` INT NOT NULL,
+	`view` INT DEFAULT 0,
+	PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8mb4;
+```
+	
 ### 使用技术
 
 使用node的mysql模块    
+
