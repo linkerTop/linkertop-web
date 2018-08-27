@@ -95,7 +95,7 @@ header div#service-items {
 	display: none;
 	position: absolute;
 	float: left;
-	left: 114px;
+	left: 112px;
 	top: -5px;
 }
 
@@ -103,7 +103,7 @@ header div#tech-items {
 	display: none;
 	position: absolute;
 	float: left;
-	left: 500.5px;
+	left: 495.5px;
 	top: -5px;
 }
 
@@ -492,8 +492,9 @@ main div.team div.team-member {
 }
 
 main div.team div.team-member div.member {
-	width: 490px;
+	width: 290px;
 	height: 250px;
+	margin-bottom: 20px;
 	background: url('png/team_member1.png') center center no-repeat;
 	background-size: 300px 250px;
 	position: relative;
