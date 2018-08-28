@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 	`type` VARCHAR(64) NOT NULL,
 	`title` VARCHAR(64) NOT NULL,
 	`intro` VARCHAR(64) NOT NULL,
-	`intro_img` VARCHAR(256) DEFAULT `default.jpg`,
+	`intro_img` VARCHAR(256) DEFAULT 'default.jpg',
 	`content` TEXT,
 	`create_time` DATETIME,
 	`update_time` DATETIME,
