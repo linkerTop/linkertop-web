@@ -6,13 +6,20 @@ const serve = require('koa-static');
 const Router = require('koa-router');
 const path = require('path');
 const bodyParser = require('koa-bodyparser');
+const session = require('koa-session');
 
 const app = new Koa();
 const route = new Router({
 	prefix: ''
 });
 
+app.keys = ['linkertop'];
+
+const config = require('./config/session_config.json');
+
 let routerFunc = require('./routerFunc.js');
+
+app.use(session(config, app));
 
 render(app, {
 	root: path.join(__dirname, 'view'),
@@ -42,7 +49,8 @@ route.get('/', routerFunc.index)						// 主页
 	.get('/techpost/activity/:id', routerFunc.activity)	// 科技报道->活动
 	.get('/admin', routerFunc.admin)					// 管理员
 	.post('/admin', routerFunc.admin)					// 管理员
-	.get('/edit/:page', routerFunc.edit);				// 编辑页面
+	.get('/edit/:page', routerFunc.edit)				// 编辑页面
+	.get('/session', routerFunc.session);				// session测试
 app.use(route.routes());
 
 if (process.env.NODE_ENV === 'test') {

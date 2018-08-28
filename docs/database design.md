@@ -25,15 +25,19 @@
 ### SQL
 ```sql
 CREATE DATABASE IF NOT EXISTS `linkertop_web` DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 USE `linkertop_web`;
+
 CREATE TABLE IF NOT EXISTS `user` (
-	`id` INT AUTO_INCREMENT,
+	`id` INT NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(128) NOT NULL,
 	`password` VARCHAR(128) NOT NULL,
+	`last_login_time` DATETIME,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE IF NOT EXISTS `post` (
-	`id` INT AUTO_INCREMENT,
+	`id` INT NOT NULL AUTO_INCREMENT,
 	`type` VARCHAR(64) NOT NULL,
 	`title` VARCHAR(64) NOT NULL,
 	`intro` VARCHAR(64) NOT NULL,

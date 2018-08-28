@@ -1,0 +1,9 @@
+{
+	"key": "linker.top",
+	"maxAge": 86400,
+	"overwrite": true,
+	"httpOnly": false, 
+	"signed": true,
+	"rolling": false, 
+	"renew": false
+}

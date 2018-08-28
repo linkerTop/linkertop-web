@@ -144,6 +144,11 @@ var	routeFunc = function () {
 					let final_temp = Object.assign(post[id - 1], template)
 					await ctx.render('techpost_post', final_temp);
 				}
+			},
+			session: async function (ctx) {
+				let n = ctx.session.views || 0;
+				ctx.session.views = ++n;
+				ctx.body = ctx.session.views + ' views';
 			}
 			
 		};
