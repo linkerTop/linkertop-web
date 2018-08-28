@@ -1,4 +1,5 @@
-const userpassConfig = require('./config/userpass.js');
+const { query } = require('./db_query.js');
+
 var	routeFunc = function () {
 	var that = {
 			index: async function (ctx) {
@@ -27,12 +28,27 @@ var	routeFunc = function () {
 			},
 			admin: async function (ctx) {
 				if (ctx.request.method === 'GET') {
-					await ctx.render('login', {
-						layout: 'simple'
-					});
+					if (ctx.session.login === true) {
+						await ctx.render('admin', {
+							layout: 'simple'
+						});
+					} else {
+						await ctx.render('login', {
+							layout: 'simple'
+						});
+					}
 				} else if (ctx.request.method === 'POST') {
 					let postData = ctx.request.body;
-					console.log(postData);
+					
+					let data = await query('SELECT * FROM user WHERE `username` = ?', [postData.username]);
+					
+					if (data.length === 0 || data[0].password !== postData.password) {
+						ctx.body = '用户名或密码错误';
+						return;
+					} else {
+						ctx.session.login = true;
+						ctx.redirect('/admin');
+					}
 					//console.log(username, password);	
 				}
 			},
@@ -146,9 +162,7 @@ var	routeFunc = function () {
 				}
 			},
 			session: async function (ctx) {
-				let n = ctx.session.views || 0;
-				ctx.session.views = ++n;
-				ctx.body = ctx.session.views + ' views';
+				ctx.body = ctx.session;
 			}
 			
 		};
