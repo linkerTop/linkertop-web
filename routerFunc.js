@@ -24,7 +24,23 @@ var	routeFunc = function () {
 				let name = ctx.params.name;
 				if (name === 'project') {
 					await ctx.render('service_project');
+				} else if (name === 'promotion') {
+					await ctx.render('service_promotion');
+				} else if (name === 'train') {
+					await ctx.render('service_train');
+				} else if (name === 'media') {
+					await ctx.render('service_media');
 				}
+			},
+			act: async function (ctx) {
+				let name = ctx.params.actname;
+				if (name === 'community') {
+					await ctx.render('activity_community');
+				} else if (name === 'brand') {
+					await ctx.render('activity_brand');
+				} else if (name === 'block') {
+					await ctx.render('activity_block');
+				} 
 			},
 			admin: async function (ctx) {
 				if (ctx.request.method === 'GET') {
@@ -46,6 +62,7 @@ var	routeFunc = function () {
 						ctx.body = '用户名或密码错误';
 						return;
 					} else {
+						query('UPDATE `user` SET `last_login_time` = ?', [new Date().toLocaleString()]);
 						ctx.session.login = true;
 						ctx.redirect('/admin');
 					}

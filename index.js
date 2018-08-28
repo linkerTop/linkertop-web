@@ -36,11 +36,8 @@ route.get('/', routerFunc.index)						// 主页
 	.get('/jobs/:jobname', routerFunc.jobs)				// 工作机会 
 	.get('/academy/more', routerFunc.academy)			// 研究院
 	.get('/team', routerFunc.team)						// 我们的团队
-	.get('/service/:name', routerFunc.service)	 		// 服务->项目开发
-	// .get('/service/investment')								// 服务->投资
-	// .get('/service/linkeracademy')							// 服务->链客学院
-	// .get('/service/mediapost')								// 媒体报道
-	// .get('/activity/:actname')								// 活动
+	.get('/service/:name', routerFunc.service)	 		// 服务
+	.get('/activity/:actname', routerFunc.act)			// 活动
 	// .get('/academy/more')
 	.get('/techpost', routerFunc.techpost)				// 科技报道	
 	.get('/techpost/report/:id', routerFunc.report)		// 科技报道->报道资讯
