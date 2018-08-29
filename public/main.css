@@ -274,6 +274,7 @@ main div.service div.intro {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 40px;
+	text-align: center;
 }
 
 main div.service div.feature {
@@ -702,9 +703,6 @@ main div.cooperation div.line {
 	justify-content: space-between;
 }
 
-main div.cooperation div.line div.container:first-child {
-	border: 1px solid #DDD;
-}
 
 main div.cooperation div.line div.container {
 	width: 200px;
@@ -713,12 +711,10 @@ main div.cooperation div.line div.container {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border: 1px solid #DDD;
-	border-left: 0;
 }
 
 main div.cooperation div.line div.container div {
 	width: 200px;
-	height: 50px;
 }
 
 main div.cooperation div.line div.container div:hover {
@@ -727,20 +723,17 @@ main div.cooperation div.line div.container div:hover {
 
 main div.cooperation div.line div.container div#coop1 {
 	background: url('/png/coop1.jpg') no-repeat bottom left;
+	height: 67px;
 }
 
 main div.cooperation div.line div.container div#coop2 {
 	background: url('/png/coop2.jpg') no-repeat bottom left;
+	height: 67px;
 }
 
 main div.cooperation div.line div.container div#coop3 {
 	background: url('/png/coop3.jpg') no-repeat bottom left;
-	background-size: 200px 100px;
-}
-
-main div.cooperation div.line div.container div#coop4 {
-	background: url('/png/coop4.jpg') no-repeat bottom left;
-	background-size: 200px 100px;
+	height: 56.5px;
 }
 
 main div.cooperation div.line div.container div#coop1:hover {
@@ -754,10 +747,6 @@ main div.cooperation div.line div.container div#coop2:hover {
 main div.cooperation div.line div.container div#coop3:hover {
 	background-position: 0 0;
 } 
-
-main div.cooperation div.line div.container div#coop4:hover {
-	background-position: 0 0;
-}
 
 footer {
 	width: 100%;
@@ -932,6 +921,7 @@ main div.academy-page h2 {
 main div.academy-page span {
 	font-size: 20px;
 	text-shadow: 0px 0px 2px #000;
+	margin-top: 10px;
 }
 
 main div.academy-content {
@@ -973,6 +963,7 @@ main div.academy-content div.academy-research div.w30 {
 }
 
 main div.academy-content div.academy-research h2 {
+	margin-top: 0;
 	margin-bottom: 40px;
 }
 
@@ -1066,6 +1057,7 @@ main div.project-page span {
 }
 
 main div.project-page-content {
+	margin-top: 60px;
 	margin-bottom: 60px;
 }
 
@@ -1079,7 +1071,19 @@ main div.project-page-content h2 span {
 	border-image: linear-gradient(90deg, #365cd3, #7a1d9a) 30 30;
 }
 
+main div.project-page-content h3 {
+	text-indent: 32px;
+	font-size: 18px;
+}
+
 main div.project-page-content p {
 	text-indent: 32px;
 	font-size: 16px;
+}
+
+main div.project-page-content img {
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	width: 80%;
 }
