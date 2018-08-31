@@ -2,15 +2,15 @@
 <div class="container activity">
 	<div class="main-act">
 		<div class="second">
-			<h1><%= header.title %></h1>
-			<p><%= header.text %></p>
+			<h1>区块链来了！传统产业人的焦虑与培训市场的“陷阱”</h1>
+			<p>互联网风风火火二十多年来，去年还在热烈讨论共享经济，今年就被区块链的概念盖过了风头。</p>
 		</div>
 	</div>
 	<div class="current-activity">
-		<% current_list.forEach(function (item) {%>
+		<% list.forEach(function (item) {%>
 		<div class="activity-item">
 			<div class="img" style="background: url('<%= item.intro_img %>') no-repeat center center"></div>
-			<p><a href="<%= item.link %>"><%= item.title %></a></p>
+			<p><a href="/techpost/activity/<%= item.id %>"><%= item.title %></a></p>
 		</div>
 		<% }) %>
 	</div>
@@ -19,7 +19,7 @@
 		<% past_list.forEach(function (item) { %>
 		<div class="activity-item">
 			<div class="img" id="img1" style="background: url('<%= item.intro_img %>') no-repeat center center"></div>
-			<p><a href="<%= item.link %>"><%= item.title %></a></p>
+			<p><a href="/techpost/activity/<%= item.id %>"><%= item.title %></a></p>
 		</div>
 		<% }) %>
 	</div>

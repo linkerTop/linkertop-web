@@ -1,0 +1,16 @@
+input[type="text"].editor {
+	width: 80%;
+}
+
+textarea {
+	width: 80%;
+	height: 400px;
+}
+
+input[type="text"].login {
+	width: 200px;
+}
+
+input[type="password"].login {
+	width: 200px;
+}

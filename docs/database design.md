@@ -10,6 +10,8 @@
 	* id (primary key int)
 	* username (varchar)
 	* password (varchar)
+	* nickname (varchar)
+	* last_login_time (datetime)
 * 文章表 (Post)
 	* id (primary key int)
 	* type (varchar(64))
@@ -32,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(128) NOT NULL,
 	`password` VARCHAR(128) NOT NULL,
+	`nickname` VARCHAR(128) NOT NULL,
 	`last_login_time` DATETIME,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;

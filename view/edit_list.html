@@ -1,0 +1,11 @@
+<main>
+<% data.forEach(function(item) { %>
+<p>
+	<span><b>ID:</b> <%= item.id %></span>
+	<span><b>题目:</b> <%= item.title %></span>
+	<span><b>作者:</b> <%= item.nickname %></span>
+	<span><b>更新时间:</b> <%= item.update_time %></span>
+	<span><a href="/edit/<%= item.id %>">编辑</a></span>
+</p>
+<% }) %>
+</main>

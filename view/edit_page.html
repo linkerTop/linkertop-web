@@ -1,0 +1,9 @@
+<form method="POST" action="/edit/<%= data.id %>">
+<p><b>ID: </b><%= data.id %></p>
+<p><b>类型: </b><input class="editor" type="hidden" name="type" value="<%= data.type %>" /><%= data.type %></p>
+<p><b>标题: </b><input class="editor" type="text" name="title" value="<%= data.title %>" /></p>
+<p><b>介绍: </b><input class="editor" type="text" name="intro" value="<%= data.intro %>" /></p>
+<p><b>图片: </b><input class="editor" type="text" name="intro_img" value="<%= data.intro_img %>"/></p>
+<p><b>内容: </b><textarea name="content"><%= data.content %></textarea></p>
+<input type="submit" value="提交修改" />
+</form>

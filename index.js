@@ -47,6 +47,7 @@ route.get('/', routerFunc.index)						// 主页
 	.get('/admin', routerFunc.admin)					// 管理员
 	.post('/admin', routerFunc.admin)					// 管理员
 	.get('/edit/:page', routerFunc.edit)				// 编辑页面
+	.post('/edit/:page', routerFunc.edit)				// 提交编辑
 	.get('/session', routerFunc.session);				// session测试
 app.use(route.routes());
 
