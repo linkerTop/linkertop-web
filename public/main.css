@@ -513,6 +513,7 @@ main div.team div.team-member div.specialist p.intro {
 	top: 235px;
 	left: 65px;
 	font-size: 12px;
+	line-height: 15px;
 }
 
 main div.team div.team-member div.specialist p.intro span {
@@ -611,6 +612,7 @@ main div.team div.team-member div.member p.another {
 	left: 10px;
 	font-size: 12px;
 	width: 175px;
+	line-height: 15px;
 }
 
 /* 链客研究院 */
@@ -1154,6 +1156,12 @@ main div.project-page-content h3 {
 main div.project-page-content p {
 	text-indent: 32px;
 	font-size: 16px;
+}
+
+main div.project-page-content p.description {
+	text-align: center;
+	font-size: 14px;
+	margin-top: 5px;
 }
 
 main div.project-page-content img {
