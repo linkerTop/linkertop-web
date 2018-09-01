@@ -168,6 +168,7 @@ main div.techpost div.techpost-top div.right div.activity-item p {
 	margin-bottom: 25px;
 	font-size: 13px;
 	color: #999;
+	word-break: break-all;
 }
 
 main div.techpost div.techpost-middle {
@@ -538,7 +539,7 @@ main div.activity div.main-act div.second p {
 main div.activity div.current-activity {
 	margin-top: 30px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	flex-wrap: wrap;
 }
@@ -546,6 +547,8 @@ main div.activity div.current-activity {
 main div.activity div.activity-item {
 	width: 24%;
 	height: 250px;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -597,7 +600,7 @@ main div.activity div.past-activity {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	flex-wrap: wrap;
 }

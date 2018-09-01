@@ -8,30 +8,14 @@
 			</div>
 		</div>
 		<div class="right">
+			<% activity_post.forEach(function (item) { %>
 			<div class="activity-item">
-				<a href="/techpost/activity/1">
-					<h3>我有一个活动你要不要来！</h3>
-					<p>如题，链客工场要举办活动啦，区块链精品社区大爆发！</p>
+				<a href="/techpost/activity/<%= item.id%>">
+					<h3><%= item.title %></h3>
+					<p><%= item.intro %></p>
 				</a>
 			</div>
-			<div class="activity-item">
-				<a href="/techpost/activity/1">
-					<h3>我有一个活动你要不要来！</h3>
-					<p>如题，链客工场要举办活动啦，区块链精品社区大爆发！</p>
-				</a>
-			</div>
-			<div class="activity-item">
-				<a href="/techpost/activity/1">
-					<h3>我有一个活动你要不要来！</h3>
-					<p>如题，链客工场要举办活动啦，区块链精品社区大爆发！</p>
-				</a>
-			</div>
-			<div class="activity-item">
-				<a href="/techpost/activity/1">
-					<h3>我有一个活动你要不要来！</h3>
-					<p>如题，链客工场要举办活动啦，区块链精品社区大爆发！</p>
-				</a>
-			</div>
+			<% }) %>
 			<a href="/techpost/activity/list">
 				<div class="more">
 				</div>
@@ -39,46 +23,18 @@
 		</div>
 	</div>
 	<div class="techpost-middle">
+		<% news_post.forEach(function (item) { %>
 		<div class="top-news-item">
-			<a href="/techpost/activity/1">
-				<div class="img" style="background: url('/png/tech_activity1.jpg') no-repeat center center;"></div>
+			<a href="/techpost/news/<%= item.id %>">
+				<div class="img" style="background: url('/png/<%= item.intro_img %>') no-repeat center center;"></div>
 				<div class="author-time">
-					<span>链客工场</span>
-					<span>2小时前</span>
+					<span><%= item.nickname %></span>
+					<span><%= item.update_time %></span>
 				</div>
-				<h3>我是头条资讯的候选词条第一位</h3>
+				<h3><%= item.title%></h3>
 			</a>
 		</div>
-		<div class="top-news-item">
-			<a href="/techpost/activity/1">
-				<div class="img" style="background: url('/png/tech_activity2.jpg') no-repeat center center;"></div>
-				<div class="author-time">
-					<span>链客工场</span>
-					<span>2小时前</span>
-				</div>
-				<h3>我是头条资讯的候选词条第二位</h3>
-			</a>
-		</div>
-		<div class="top-news-item">
-			<a href="/techpost/activity/1">
-				<div class="img" style="background: url('/png/tech_activity3.jpg') no-repeat center center;"></div>
-				<div class="author-time">
-					<span>链客工场</span>
-					<span>2小时前</span>
-				</div>
-				<h3>我是头条资讯的候选词条第三位</h3>
-			</a>
-		</div>
-		<div class="top-news-item">
-			<a href="/techpost/activity/1">
-				<div class="img" style="background: url('/png/tech_activity4.jpg') no-repeat center center;"></div>
-				<div class="author-time">
-					<span>链客工场</span>
-					<span>2小时前</span>
-				</div>
-				<h3>我是头条资讯的候选词条第N位</h3>
-			</a>
-		</div>
+		<% }) %>
 	</div>
 	<div class="techpost-bottom">
 		<div class="left">

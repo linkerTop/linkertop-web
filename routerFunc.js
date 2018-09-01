@@ -86,7 +86,6 @@ var	routeFunc = function () {
 				if (ctx.request.method === 'GET') {
 					let page = ctx.params.page;
 					if (page === 'activity') {
-						
 						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "activity" AND post.author = user.id');
 						
 						if (data.length !== 0) {
@@ -98,11 +97,38 @@ var	routeFunc = function () {
 							});
 						}
 					} else if (page === 'report'){
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "report" AND post.author = user.id');
 						
+						if (data.length !== 0) {
+							console.log(page === 'activity');
+							await ctx.render('edit_list', {
+								layout: 'simple',
+								data: data,
+								title: '链客资讯列表'
+							});
+						}
 					} else if (page === 'topic') {
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "topic" AND post.author = user.id');
 						
+						if (data.length !== 0) {
+							console.log(page === 'activity');
+							await ctx.render('edit_list', {
+								layout: 'simple',
+								data: data,
+								title: '话题列表'
+							});
+						}
 					} else if (page === 'news') {
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "news" AND post.author = user.id');
 						
+						if (data.length !== 0) {
+							console.log(page === 'activity');
+							await ctx.render('edit_list', {
+								layout: 'simple',
+								data: data,
+								title: '快讯列表'
+							});
+						}
 					} else {
 						let id = Number(page);
 						if (id === NaN) {
@@ -145,9 +171,14 @@ var	routeFunc = function () {
 				}
 			},
 			techpost: async function (ctx) {
-				await ctx.render('techpost', {
-					layout: 'techpost_template'
-				});
+				let activity_post = await query('SELECT `id`, `title`, `intro` FROM `post` WHERE `type` = "activity" ORDER BY `update_time` DESC LIMIT 4');
+				let news_post = await query('SELECT `post`.`id`, `post`.`title`, `post`.`intro_img`, `user`.`nickname` FROM `post`, `user` WHERE `post`.`type` = "news" AND `user`.`id` = `post`.`author` ORDER BY `update_time` DESC LIMIT 4')
+				let template = {
+					layout: 'techpost_template',
+					activity_post: activity_post,
+					news_post: news_post,
+				};
+				await ctx.render('techpost', template);
 			},
 			report: async function (ctx) {
 				let id = ctx.params.id;
@@ -171,17 +202,18 @@ var	routeFunc = function () {
 			news: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					let post_list = require('./data/news_list');
+					let post_list = await query('SELECT `id`, `title`, `intro`, `intro_img`, `update_time`, `content` FROM `post` WHERE `type` = "news" ORDER BY `update_time` DESC');
+					
 					let template = {
-						layout: 'techpost_template'
+						layout: 'techpost_template',
+						post: post_list,
 					}
-					let final_temp = Object.assign(post_list, template);
 					
-					await ctx.render('news/list', final_temp);
+					await ctx.render('news/list', template);
 				} else {
-					let post = require('./data/news_post.json');
+					let post = await query('SELECT post.title, post.intro, post.intro_img, post.content, post.update_time, post.author, user.nickname FROM post, user WHERE post.id = ? AND post.author = user.id', [id]);
 					
-					if (post[id - 1] === undefined) {
+					if (post.length === 0) {
 						await ctx.render('404', {
 							layout: 'simple', 
 							title: '该页面已走失',
@@ -191,26 +223,27 @@ var	routeFunc = function () {
 					
 					let template = {
 						layout: 'techpost_template',
-						type: 'news-page'
+						type: 'news-page',
+						post: post[0],
 					};
-					let final_temp = Object.assign(post[id - 1], template)
-					await ctx.render('techpost_post', final_temp);
+
+					await ctx.render('techpost_post', template);
 				}
 			},
 			topic: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					let post_list = require('./data/topic_list.json');
+					let post_list = await query('SELECT `id`, `title`, `intro`, `intro_img` FROM `post` WHERE `type` = "topic"');
 					let template = {
-						layout: 'techpost_template'
+						layout: 'techpost_template',
+						post: post_list,
 					}
-					let final_temp = Object.assign(post_list, template);
 					
-					await ctx.render('topic/list', final_temp);
+					await ctx.render('topic/list', template);
 				} else {
-					let post = require('./data/topic_post.json');
+					let post = await query('SELECT post.title, post.intro, post.intro_img, post.content, post.update_time, post.author, user.nickname FROM post, user WHERE post.id = ? AND post.author = user.id', [id]);
 					
-					if (post[id - 1] === undefined) {
+					if (post.length === 0) {
 						await ctx.render('404', {
 							layout: 'simple',
 							title: '该页面已走失',
@@ -220,10 +253,11 @@ var	routeFunc = function () {
 					
 					let template = {
 						layout: 'techpost_template',
-						type: 'topic-page'
+						type: 'topic-page',
+						post: post[0],
 					};
-					let final_temp = Object.assign(post[id - 1], template)
-					await ctx.render('techpost_post', final_temp);
+					
+					await ctx.render('techpost_post', template);
 				}
 			},
 			activity: async function (ctx) {
@@ -239,7 +273,7 @@ var	routeFunc = function () {
 					}
 					await ctx.render('activity/list', template);
 				} else {
-					let post = await query('SELECT post.title, post.intro, post.intro_img, post.content, post.update_time, post.author FROM post, user WHERE post.id = ? AND post.author = user.id', [id]);
+					let post = await query('SELECT post.title, post.intro, post.intro_img, post.content, post.update_time, post.author, user.nickname FROM post, user WHERE post.id = ? AND post.author = user.id', [id]);
 					if (post.length === 0) {
 						await ctx.render('404', {
 							layout: 'simple',

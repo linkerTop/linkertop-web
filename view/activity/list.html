@@ -9,7 +9,7 @@
 	<div class="current-activity">
 		<% list.forEach(function (item) {%>
 		<div class="activity-item">
-			<div class="img" style="background: url('<%= item.intro_img %>') no-repeat center center"></div>
+			<div class="img" style="background: url('/post-img/<%= item.intro_img %>') no-repeat center center"></div>
 			<p><a href="/techpost/activity/<%= item.id %>"><%= item.title %></a></p>
 		</div>
 		<% }) %>
@@ -18,7 +18,7 @@
 	<div class="past-activity">
 		<% past_list.forEach(function (item) { %>
 		<div class="activity-item">
-			<div class="img" id="img1" style="background: url('<%= item.intro_img %>') no-repeat center center"></div>
+			<div class="img" id="img1" style="background: url('/post-img/<%= item.intro_img %>') no-repeat center center"></div>
 			<p><a href="/techpost/activity/<%= item.id %>"><%= item.title %></a></p>
 		</div>
 		<% }) %>

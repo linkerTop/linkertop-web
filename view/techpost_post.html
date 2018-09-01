@@ -3,7 +3,7 @@
 	</div>
 	<div class="container page-content">
 		<div class="left">
-			<img class="intro_img" src="<%= post.intro_img%>" />
+			<img class="intro_img" src="/post-img/<%= post.intro_img%>" />
 			<h3>热门推荐</h3>
 			<div class="recommend-item">
 				<h4>Matryx，来自未来的科研协作平台</h4>
@@ -27,7 +27,7 @@
 			<div class="author-time">
 				<img src="/user-avatar/<%= post.author %>.png" />
 				<p class="author"><%= post.nickname %></p>
-				<p class="post-time"><%= post.update_time.toLocaleString() %></p>
+				<p class="post-time">发布于 <%= post.update_time.toLocaleString() %></p>
 			</div>
 			<% post.content.split("\r\n").forEach(function (p) {%>
 			<p class="content"><%= p %></p>

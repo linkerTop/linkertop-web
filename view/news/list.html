@@ -1,20 +1,18 @@
 <main>
 <div class="container news">
-	<% list.forEach(function (time) { %>
-	<h1><%= time.date %></h1>
-	<% time.posts.forEach (function (post) { %>
+	<% post.forEach(function (item) { %>
+	<h1><%= item.update_time.toLocaleString().split(" ")[0] %></h1>
 	<div class="news-intro">
-		<h2><%= post.title %></h2>
-		<p class="send-time"><%= post.post_time %></p>
-		<% post.content.forEach(function (part) { %>
+		<h2><%= item.title %></h2>
+		<p class="send-time"><%= item.update_time.toLocaleString() %></p>
+		<% item.content.split("\r\n").forEach(function (part) { %>
 			<p class="main-body"><%= part %></p>
 		<% }) %>
 		<div class="button">
-			<a href="<%= post.link %>"><button>查看详情 ►</button></a>
+			<a href="/techpost/news/<%= item.id %>"><button>查看详情 ►</button></a>
 		</div>
 		<img class="share-button" src="/png/share-button.png"/>
 	</div>
-	<% }) %>
 	<% }) %>
 </div>
 </main>

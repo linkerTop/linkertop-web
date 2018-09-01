@@ -10,12 +10,12 @@
 	</div>
 </div>
 <div class="container topic-content">
-	<% list.forEach(function(part) { %>
+	<% post.forEach(function(item) { %>
 	<div class="topic-item">
-		<a href="<%= part.link %>">
-			<div class="img" style="background:url('<%= part.img %>') no-repeat center center; background-size: 130%;"/></div>
-			<h3><%= part.title %></h3>
-			<p><%= part.content %></p>
+		<a href="/techpost/topic/<%= item.id %>">
+			<div class="img" style="background:url('/post-img/<%= item.intro_img %>') no-repeat center center; background-size: 130%;"/></div>
+			<h3><%= item.title %></h3>
+			<p><%= item.intro %></p>
 		</a>
 	</div>
 	<% })%>

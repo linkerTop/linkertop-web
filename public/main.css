@@ -510,8 +510,8 @@ main div.team div.team-member div.specialist {
 main div.team div.team-member div.specialist p.intro {
 	position: absolute;
 	width: 230px;
-	top: 235px;
-	left: 65px;
+	top: 242px;
+	left: 80px;
 	font-size: 12px;
 	line-height: 15px;
 }
@@ -564,17 +564,17 @@ main div.team div.team-member div#renqiang p.another {
 }
 
 main div.team div.team-member div#xiayunni {
-	background: url('png/team_specialist1.png') center center no-repeat;
+	background: url('png/team_specialist1.png') 65px center no-repeat;
 	background-size: 250px;
 }
 
 main div.team div.team-member div#xuexiaofeng {
-	background: url('png/team_specialist2.png') center center no-repeat;
+	background: url('png/team_specialist2.png') 65px center no-repeat;
 	background-size: 250px;
 }
 
 main div.team div.team-member div#zhuyouping {
-	background: url('png/team_specialist3.png') center center no-repeat;
+	background: url('png/team_specialist3.png') 65px center no-repeat;
 	background-size: 250px;
 }
 
