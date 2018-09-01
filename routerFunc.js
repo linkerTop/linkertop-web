@@ -182,9 +182,9 @@ var	routeFunc = function () {
 			},
 			report: async function (ctx) {
 				let id = ctx.params.id;
-				let post = require('./data/report_post.json');
+				let post = await query('SELECT post.title, post.intro, post.intro_img, post.content, post.update_time, post.author, user.nickname FROM post, user WHERE post.id = ? AND post.author = user.id', [id]);
 				
-				if (id === undefined && post[id - 1] === undefined) {
+				if (post.length === 0) {
 					await ctx.render('404', {
 						layout: 'simple' 
 					});
@@ -193,10 +193,12 @@ var	routeFunc = function () {
 				
 				let template = {
 					layout: 'techpost_template',
-					type: 'report-page'
+					type: 'report-page',
+					type_str: '链客资讯',
+					post: post[0],
 				};
-				let final_temp = Object.assign(post[id - 1], template)
-				await ctx.render('techpost_post', final_temp);
+
+				await ctx.render('techpost_post', template);
 
 			},
 			news: async function (ctx) {
@@ -224,6 +226,7 @@ var	routeFunc = function () {
 					let template = {
 						layout: 'techpost_template',
 						type: 'news-page',
+						type_str: '快讯',
 						post: post[0],
 					};
 
@@ -254,6 +257,7 @@ var	routeFunc = function () {
 					let template = {
 						layout: 'techpost_template',
 						type: 'topic-page',
+						type_str: '专题',
 						post: post[0],
 					};
 					
@@ -285,6 +289,7 @@ var	routeFunc = function () {
 					let template = {
 						layout: 'techpost_template',
 						type: 'activity-page',
+						type_str: '活动',
 						post: post[0],
 					};
 				
