@@ -230,7 +230,8 @@ main div.ad-part div.select-part span.selected {
 
 /* 我们是谁 */
 main div.whoarewe {
-	background: url('png/whoarewe_bg.jpg') top right no-repeat;
+	background: url('png/whoarewe_bg.png') top right no-repeat;
+	background-size: 50%;
 	height: 450px;
 }
 
@@ -491,51 +492,125 @@ main div.team div.team-member {
 }
 
 main div.team div.team-member div.member {
-	width: 300px;
+	width: 350px;
 	height: 250px;
-	margin-left: 50px;
+	margin-left: 0px;
 	margin-bottom: 20px;
-	background: url('png/team_member1.png') center center no-repeat;
-	background-size: 300px 250px;
 	position: relative;
+}
+
+main div.team div.team-member div.specialist {
+	width: 350px;
+	height: 380px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+main div.team div.team-member div.specialist p.intro {
+	position: absolute;
+	width: 230px;
+	top: 235px;
+	left: 65px;
+	font-size: 12px;
+}
+
+main div.team div.team-member div.specialist p.intro span {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 main div.team div.team-member div#boweimin {
 	background: url('png/team_member1.png') center center no-repeat;
-	background-size: 300px 250px
+	background-size: 350px 250px;
 }
 
-main div.team div.team-member div.member p.intro {
-	position: relative;
-	top: 50px;
-	left: -40px;
-	font-size: 14px;
-	font-weight: bold;
-	width: 200px;
+main div.team div.team-member div#boweimin p.intro {
+	text-align: left;
 }
+
+main div.team div.team-member div#wenshannan {
+	background: url('png/team_member2.png') center center no-repeat;
+	background-size: 350px 250px;
+}
+
+main div.team div.team-member div#yuchangjiang {
+	background: url('png/team_member3.png') center center no-repeat;
+	background-size: 350px 250px;
+}
+
+main div.team div.team-member div#guolu {
+	background: url('png/team_member4.png') center center no-repeat;
+	background-size: 350px 250px;
+}
+
+main div.team div.team-member div#chenboshu {
+	background: url('png/team_member5.png') center center no-repeat;
+	background-size: 350px 250px;
+}
+
+main div.team div.team-member div#chenboshu p.another {
+	width: 150px;
+}
+
+main div.team div.team-member div#renqiang {
+	background: url('png/team_member6.png') center center no-repeat;
+	background-size: 350px 250px;
+}
+
+main div.team div.team-member div#renqiang p.another {
+	width: 150px;
+}
+
+main div.team div.team-member div#xiayunni {
+	background: url('png/team_specialist1.png') center center no-repeat;
+	background-size: 250px;
+}
+
+main div.team div.team-member div#xuexiaofeng {
+	background: url('png/team_specialist2.png') center center no-repeat;
+	background-size: 250px;
+}
+
+main div.team div.team-member div#zhuyouping {
+	background: url('png/team_specialist3.png') center center no-repeat;
+	background-size: 250px;
+}
+
 
 main div.team div.team-member div.member span.name {
 	position: relative;
-	top: 40px;
-	left: -40px;
+	top: 50px;
+	left: 80px;
 	font-size: 20px;
 	font-weight: bold;
 } 
 
+main div.team div.team-member div.member p.intro {
+	position: relative;
+	top: 40px;
+	left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	width: 175px;
+	text-align: center;
+}
+
+
 main div.team div.team-member div.member span.prof {
 	position: relative;
 	top: 42px;
-	left: -30px;
+	left: 0px;
 	font-size: 14px;
 	font-weight: bold;
 }
 
 main div.team div.team-member div.member p.another {
 	position: relative;
-	top: 30px;
-	left: -40px;
+	top: 28px;
+	left: 10px;
 	font-size: 12px;
-	width: 170px;
+	width: 175px;
 }
 
 /* 链客研究院 */
