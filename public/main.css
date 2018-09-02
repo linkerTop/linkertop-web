@@ -542,9 +542,6 @@ main div.team div.team-member div#boweimin {
 	background-size: 350px 250px;
 }
 
-main div.team div.team-member div#boweimin p.intro {
-	text-align: left;
-}
 
 main div.team div.team-member div#wenshannan {
 	background: url('png/team_member2.png') center center no-repeat;
@@ -787,17 +784,19 @@ main div.cooperation h2 span {
 
 main div.cooperation div.line {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 }
 
 
 main div.cooperation div.line div.container {
-	width: 200px;
+	width: 198px;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border: 1px solid #DDD;
+	margin: 0;
 }
 
 main div.cooperation div.line div.container div {
@@ -823,6 +822,16 @@ main div.cooperation div.line div.container div#coop3 {
 	height: 56.5px;
 }
 
+main div.cooperation div.line div.container div#coop4 {
+	background: url('/png/coop4.jpg') no-repeat bottom left;
+	height: 67px;
+}
+
+main div.cooperation div.line div.container div#coop5 {
+	background: url('/png/coop5.jpg') no-repeat bottom left;
+	height: 67px;
+}
+
 main div.cooperation div.line div.container div#coop1:hover {
 	background-position: 0 0;
 }
@@ -834,6 +843,14 @@ main div.cooperation div.line div.container div#coop2:hover {
 main div.cooperation div.line div.container div#coop3:hover {
 	background-position: 0 0;
 } 
+
+main div.cooperation div.line div.container div#coop4:hover {
+	background-position: 0 0;
+}
+
+main div.cooperation div.line div.container div#coop5:hover {
+	background-position: 0 1px;
+}
 
 footer {
 	width: 100%;
@@ -1130,7 +1147,7 @@ main div.team-page-content div.intro-part p {
 /* project 项目开发 */
 main div.project-page {
 	height: 580px;
-	background-color: #5b3e4b;
+	background: url('/png/project_bg.jpg') no-repeat center center;
 }
 
 main div.project-page h2 {
