@@ -1,6 +1,6 @@
 {
 	"key": "linker.top",
-	"maxAge": 86400,
+	"maxAge": 1800000,
 	"overwrite": true,
 	"httpOnly": false, 
 	"signed": true,

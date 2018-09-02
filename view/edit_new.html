@@ -1,0 +1,15 @@
+<form method="POST" action="/edit/new">
+<p><b>类型: </b><select name="type">
+	<option value="activity" selected>活动</option>
+	<option value="news">快讯</option>
+	<option value="topic">专题</option>
+	<option value="report">链客资讯</option>
+	<option value="report-exclusive">链客资讯-独家</option>
+	<option value="report-depth">链客资讯-深度</option>
+</select></p>
+<p><b>标题: </b><input class="editor" type="text" name="title" value="" /></p>
+<p><b>介绍: </b><input class="editor" type="text" name="intro" value="" /></p>
+<p><b>图片: </b><input class="editor" type="text" name="intro_img" value=""/></p>
+<p><b>内容: </b><textarea name="content"></textarea></p>
+<input type="submit" value="提交修改" />
+</form>

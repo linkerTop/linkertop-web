@@ -63,7 +63,7 @@ var	routeFunc = function () {
 				} else if (ctx.request.method === 'POST') {
 					let postData = ctx.request.body;
 					
-					let data = await query('SELECT `password`, `last_login_time` FROM user WHERE `username` = ?', [postData.username]);
+					let data = await query('SELECT `id`, `password`, `last_login_time` FROM user WHERE `username` = ?', [postData.username]);
 					
 					if (data.length === 0 || data[0].password !== postData.password) {
 						ctx.body = '用户名或密码错误';
@@ -71,8 +71,9 @@ var	routeFunc = function () {
 					} else {
 						query('UPDATE `user` SET `last_login_time` = ?', [new Date().toLocaleString()]);
 						ctx.session.login = true;
+						ctx.session.id = data[0].id;
 						ctx.session.username = postData.username;
-						ctx.session.last_login = data[0].last_login_time;
+						ctx.session.last_login = data[0].last_login_time.toLocaleString();
 						ctx.redirect('/admin');
 					}
 					//console.log(username, password);	
@@ -86,49 +87,70 @@ var	routeFunc = function () {
 				if (ctx.request.method === 'GET') {
 					let page = ctx.params.page;
 					if (page === 'activity') {
-						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "activity" AND post.author = user.id');
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "activity" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
 						
 						if (data.length !== 0) {
-							console.log(page === 'activity');
 							await ctx.render('edit_list', {
 								layout: 'simple',
 								data: data,
 								title: '活动列表'
 							});
+						} else {
+							await ctx.render('404', {
+								layout: 'simple',
+								title: '没有活动',
+							});
 						}
 					} else if (page === 'report'){
-						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "report" AND post.author = user.id');
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "report" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
 						
 						if (data.length !== 0) {
-							console.log(page === 'activity');
 							await ctx.render('edit_list', {
 								layout: 'simple',
 								data: data,
 								title: '链客资讯列表'
 							});
+						} else {
+							await ctx.render('404', {
+								layout: 'simple',
+								title: '没有报道',
+							});
 						}
 					} else if (page === 'topic') {
-						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "topic" AND post.author = user.id');
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "topic" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
 						
 						if (data.length !== 0) {
-							console.log(page === 'activity');
 							await ctx.render('edit_list', {
 								layout: 'simple',
 								data: data,
-								title: '话题列表'
+								title: '专题列表'
+							});
+						} else {
+							await ctx.render('404', {
+								layout: 'simple',
+								title: '没有专题',
 							});
 						}
 					} else if (page === 'news') {
-						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "news" AND post.author = user.id');
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "news" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
 						
 						if (data.length !== 0) {
-							console.log(page === 'activity');
 							await ctx.render('edit_list', {
 								layout: 'simple',
 								data: data,
 								title: '快讯列表'
 							});
+						} else {
+							await ctx.render('404', {
+								layout: 'simple',
+								title: '没有快讯',
+							});
 						}
+					} else if (page === 'new') {
+						await ctx.render('edit_new', {
+							layout: 'simple',
+							title: '新建',
+						});
 					} else {
 						let id = Number(page);
 						if (id === NaN) {
@@ -149,14 +171,26 @@ var	routeFunc = function () {
 					}
 				} else if (ctx.request.method === 'POST') {
 					let postData = ctx.request.body;
-					
 					let page = ctx.params.page;
+					
+					if (page === 'new') {
+						await query('INSERT INTO `post` (`type`, `title`, `intro`, `intro_img`, `content`, `create_time`, `update_time`, `author`) VALUES (?, ?, ?, ?, ?, NOW(), NOW(), ?)', 
+						[postData.type, postData.title, postData.intro, postData.intro_img, postData.content, ctx.session.id]);
+						
+						await ctx.render('200', {
+							layout: 'simple',
+							title: '发表成功',
+						});
+						return;
+					}
+					
 					let id = Number(page);
 					if (id === NaN) {
 						await ctx.render('404', {
 							layout: 'simple',
 							title: '错误提交',
 						});
+						return;
 					}
 					
 					let title = postData.title;
@@ -267,7 +301,7 @@ var	routeFunc = function () {
 			activity: async function (ctx) {
 				let id = ctx.params.id;
 				if (id === 'list') {
-					let post_list = await query('SELECT `id`, `title`, `intro_img` FROM `post` WHERE `type` = "activity"');
+					let post_list = await query('SELECT `id`, `title`, `intro_img`, `update_time` FROM `post` WHERE `type` = "activity" ORDER BY `update_time` DESC');
 					let past_post_list = await query('SELECT `id`, `title`, `intro_img` FROM `post` WHERE `type` = "activity"');
 
 					let template = {
