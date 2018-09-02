@@ -199,7 +199,7 @@ main div.ad-part div.ad-bg#ad-bg1 {
 }
 
 main div.ad-part div.ad-bg#ad-bg2 {
-	background: url('png/ad_bg2.png') center center no-repeat;
+	background: url('png/ad_bg2.jpg') center center no-repeat;
 }
 
 main div.ad-part div.ad-bg#ad-bg3 {
@@ -741,6 +741,8 @@ main div.news div.grid div:hover div.background {
 	padding: 0;
 	background: linear-gradient(90deg, rgba(42, 64, 121, 0.7), rgba(86, 38, 102, 0.7));
 	z-index: 1;
+	left: 0;
+	top: 0;
 }
 
 main div.news div.grid div:hover span {
@@ -754,26 +756,18 @@ main div.news div.grid div:hover {
 
 main div.news div.grid div#news1 {
 	background: url('png/news_bg1.jpg') center center no-repeat;
-	background-color: rgba(0, 0, 0, 0.6);
-	background-blend-mode: darken;
 }
 
 main div.news div.grid div#news2 {
 	background: url('png/news_bg2.jpg') center center no-repeat;
-	background-color: rgba(0, 0, 0, 0.6);
-	background-blend-mode: darken;
 }
 
 main div.news div.grid div#news3 {
 	background: url('png/news_bg3.jpg') center center no-repeat;
-	background-color: rgba(0, 0, 0, 0.6);
-	background-blend-mode: darken;
 }
 
 main div.news div.grid div#news4 {
 	background: url('png/news_bg4.jpg') center center no-repeat;
-	background-color: rgba(0, 0, 0, 0.6);
-	background-blend-mode: darken;
 }
 
 /* 合作机构 */
