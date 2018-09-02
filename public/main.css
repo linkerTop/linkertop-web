@@ -177,6 +177,7 @@ main div.ad-part h1 {
 	color: #FFF;
 	font-size: 50px;
 	margin-bottom: 10px;
+	text-shadow: 1px 1px 4px #000;
 }
 
 main div.ad-part span {
@@ -198,7 +199,7 @@ main div.ad-part div.ad-bg#ad-bg1 {
 }
 
 main div.ad-part div.ad-bg#ad-bg2 {
-	background: url('png/ad_bg2.jpg') center center no-repeat;
+	background: url('png/ad_bg2.png') center center no-repeat;
 }
 
 main div.ad-part div.ad-bg#ad-bg3 {
@@ -230,7 +231,7 @@ main div.ad-part div.select-part span.selected {
 
 /* 我们是谁 */
 main div.whoarewe {
-	background: url('png/whoarewe_bg.png') top right no-repeat;
+	background: url('png/whoarewe_bg.jpg') top right no-repeat;
 	background-size: 50%;
 	height: 450px;
 }
