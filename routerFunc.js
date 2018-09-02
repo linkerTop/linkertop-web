@@ -102,7 +102,7 @@ var	routeFunc = function () {
 							});
 						}
 					} else if (page === 'report'){
-						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type = "report" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
+						let data = await query('SELECT post.id, post.title, user.nickname, post.update_time FROM `post`,`user` WHERE post.type LIKE "report%" AND post.author = user.id ORDER BY `post`.`update_time` DESC');
 						
 						if (data.length !== 0) {
 							await ctx.render('edit_list', {
